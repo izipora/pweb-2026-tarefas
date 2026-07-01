@@ -5,9 +5,14 @@ class Missão (models.Model):
     status = models.BooleanField()
     prazo = models.DateField()
 
+    class Meta:
+        verbose_name = "Missão"
+        verbose_name_plural = "Missões"
+
+
     def __str__(self):
          if self.status:
             status = "Missão concluída 😊💯"
          else: 
-            "Missão pendente 🥲❌"
+            status="Missão pendente 🥲❌"
          return f"Nome: {self.nome} | Status: {status} | Prazo: {self.prazo}"
